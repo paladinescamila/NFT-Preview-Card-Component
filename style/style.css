@@ -32,13 +32,29 @@ body {
 .card-image {
   position: relative;
   cursor: pointer;
-}
-.card-image > img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 302px;
   height: 302px;
+}
+.card-image img:first-of-type {
+  width: 100%;
+  height: 100%;
   border-radius: 15px;
 }
-.card-image div {
+.card-image img:last-of-type {
+  width: 45px;
+  height: 45px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.card-image::before {
+  content: "";
   width: 100%;
   height: 100%;
   border-radius: 15px;
@@ -46,17 +62,10 @@ body {
   position: absolute;
   top: 0;
   left: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   opacity: 0;
   transition: opacity 0.3s;
 }
-.card-image div img {
-  width: 45px;
-  height: 45px;
-}
-.card-image:hover div {
+.card-image:hover::before, .card-image:hover img:last-of-type {
   opacity: 1;
 }
 
@@ -66,6 +75,7 @@ body {
   font-size: 22px;
   width: max-content;
   cursor: pointer;
+  text-decoration: none;
 }
 .title:hover {
   color: hsl(178deg, 100%, 50%);
@@ -88,6 +98,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  list-style: none;
 }
 
 .price,
@@ -131,13 +142,14 @@ body {
   border: 1px solid hsl(0deg, 0%, 100%);
   border-radius: 50%;
 }
-.creator p {
+.creator a {
   color: hsl(0deg, 0%, 100%);
-  font-weight: 600;
+  font-weight: 400;
   margin-left: 5px;
   cursor: pointer;
+  text-decoration: none;
 }
-.creator p:hover {
+.creator a:hover {
   color: hsl(178deg, 100%, 50%);
 }
 
@@ -148,7 +160,7 @@ body {
   width: 100%;
   position: absolute;
   bottom: 0;
-  padding: 30px 0;
+  padding: 20px 0;
 }
 .attribution a {
   color: hsl(178deg, 100%, 50%);
@@ -162,7 +174,7 @@ body {
   }
   .card-image {
     width: 280px;
-    height: 278px;
+    height: 280px;
   }
   .price img,
 .counter img {
@@ -175,19 +187,18 @@ body {
 .creator {
     font-size: 15px;
   }
-  .attribution {
-    position: relative;
-    padding: 20px 0 0 0;
-  }
 }
-@media (max-width: 370px) {
+@media (max-width: 400px) {
   .container {
     transform: scale(0.9);
   }
 }
-@media (max-width: 340px) {
+@media (max-width: 350px) {
   .container {
     transform: scale(0.8);
+  }
+  .attribution {
+    padding: 20px 10px;
   }
 }
 
