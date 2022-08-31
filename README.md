@@ -7,8 +7,8 @@ This is a solution to the [NFT preview card component challenge on Frontend Ment
 
 ## Links
 
--   [Solution URL](https://github.com/paladinescamila/NFT-Preview-Card-Component)
--   [Live Site URL](https://npcc-frontend-mentor.netlify.app/)
+-   [Solution](https://www.frontendmentor.io/solutions/nft-preview-card-component-tlmpG62Cd3)
+-   [Live Site](https://npcc-frontend-mentor.netlify.app/)
 
 ## Built with
 
